@@ -1,4 +1,17 @@
 package Preuniversitario.Arquitectura.Services;
 
-public class EstudiantesService {
+import Preuniversitario.Arquitectura.Models.Estudiantes;
+import Preuniversitario.Arquitectura.Repositorys.IEstudiantesRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+@Service
+public class EstudiantesService implements IEstudiantesService<Estudiantes> {
+    @Autowired
+    private IEstudiantesRepository iEstudiantesRepository;
+    @Override
+    public List<Estudiantes> findAll() {
+        return iEstudiantesRepository.findAll();
+    }
 }

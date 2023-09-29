@@ -7,7 +7,7 @@ import lombok.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Estudiantes")
+@Table(name = "estudiantes")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,24 +20,24 @@ Estudiante : Cumple el rol de plantilla para instanciar un objeto recibiendo los
 public class Estudiantes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "RUT")
+    @Column(name = "rut")
     private Integer rut;
 
-    @Column(name = "NOMBRES")
+    @Column(name = "nombres")
     private String nombres;
 
-    @Column(name = "APELLIDOS")
+    @Column(name = "apellidos")
     private String apellidos;
 
-    @Column(name = "FECHA_NACIMIENTO")
+    @Column(name = "fecha_nacimiento")
     private Date fechaNacimiento;
 
-    @Column(name = "TIPO_COLEGIO")
+    @Column(name = "tipo_colegio")
     private String tipoColegio;
 
-    @Column(name = "NOMBRE_COLEGIO")
+    @Column(name = "nombre_colegio")
     private String nombreColegio;
 
-    @Column(name = "EGRESO")
+    @Column(name = "egreso")
     private Integer egreso;
 }
