@@ -14,4 +14,9 @@ public class EstudiantesService implements IEstudiantesService<Estudiantes> {
     public List<Estudiantes> findAll() {
         return iEstudiantesRepository.findAll();
     }
+
+    @Override
+    public Estudiantes create(Estudiantes estudiante) {
+        return iEstudiantesRepository.save(estudiante);
+    }
 }

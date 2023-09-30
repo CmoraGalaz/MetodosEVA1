@@ -19,7 +19,7 @@ Estudiante : Cumple el rol de plantilla para instanciar un objeto recibiendo los
 */
 public class Estudiantes {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "rut")
     private Integer rut;
 
