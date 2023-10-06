@@ -27,40 +27,40 @@
 
 
 <div class="container-sm">
-<form>
+<form th:action="@{/Estudiantes}" th:object="${estudiante}" method="post">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">RUT</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="number" class="form-control" id="exampleInputEmail1" name = "rut" th:field="*{rut}" aria-describedby="emailHelp">
 
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Nombres</label>
-    <input type="text" class="form-control" id="exampleInputPassword1">
+    <input type="text" class="form-control" id="exampleInputPassword1"  name = "nombres" th:field="*{nombres}">
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Apellidos</label>
-    <input type="text" class="form-control" id="exampleInputPassword1">
+    <label for="exampleInputPassword2" class="form-label">Apellidos</label>
+    <input type="text" class="form-control" id="exampleInputPassword2" name = "apellidos" th:field="*{apellidos}">
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Fecha Nacimiento</label>
-    <input type="date" class="form-control" id="exampleInputPassword1">
+    <label for="exampleInputPassword3" class="form-label">Fecha Nacimiento</label>
+    <input type="date" class="form-control" id="exampleInputPassword3" name = "fechanacimiento" th:field="*{fechaNacimiento}">
   </div>
   <div class="mb-3">
-  <label for="exampleInputPassword1" class="form-label">Tipo De Colegio</label>
-  <select class="form-select" aria-label="Default select example">
-    <option selected>Seleccione</option>
-    <option value="1">Municipal</option>
-    <option value="2">Subvencionado</option>
-    <option value="3">Privado</option>
-  </select>
+  <label for="exampleInputPassword5" class="form-label">Tipo De Colegio</label>
+    <select class="form-select" id="exampleInputPassword5" aria-label="Default select example" name="tipocolegio" th:field="*{tipoColegio}">
+      <option value="1">Municipal</option>
+      <option value="2">Subvencionado</option>
+      <option value="3">Privado</option>
+    </select>
+
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Nombre Del Colegio</label>
-    <input type="text" class="form-control" id="exampleInputPassword1">
+    <label for="exampleInputPassword6" class="form-label">Nombre Del Colegio</label>
+    <input type="text" class="form-control" id="exampleInputPassword6" name = "nombrecolegio" th:field="*{nombreColegio}">
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Egreso</label>
-    <input type="number" class="form-control" id="exampleInputPassword1">
+    <label for="exampleInputPassword7" class="form-label">Egreso</label>
+    <input type="number" class="form-control" id="exampleInputPassword7"name = "egreso" th:field="*{egreso}">
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>

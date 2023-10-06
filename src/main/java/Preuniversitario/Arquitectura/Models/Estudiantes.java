@@ -30,7 +30,7 @@ public class Estudiantes {
     private String apellidos;
 
     @Column(name = "fecha_nacimiento")
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
 
     @Column(name = "tipo_colegio")
     private String tipoColegio;

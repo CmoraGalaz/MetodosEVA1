@@ -14,13 +14,15 @@
       <th>Rut</th>
       <th>Nombres</th>
       <th>Apellidos</th>
+      <th>Fecha nacimiento</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="estudiantes:${estudiantes}">
-      <td th:number="${estudiantes.rut}"></td>
+      <td th:text="${estudiantes.rut}"></td>
       <td th:text="${estudiantes.nombres}"></td>
       <td th:text="${estudiantes.apellidos}"></td>
+      <td th:text="${estudiantes.fechaNacimiento}"></td>
       <td>
         <a class="btn btn-primary" href="#" role="button">Editar</a>
         <a class="btn btn-danger" href="#" role="button">Eliminar</a>
