@@ -1,19 +1,16 @@
 version: '3.9'
 services:
-  java_app:
-    container_name: java_app
-    image: cmoragalaz/webapp:latest
-    build: .
+  nginx:
+    image: nginx:latest
+    container_name: nginx-proxy
+    restart: always
     ports:
-      - 8088:8088
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://java_db:5432/Preuniversitario
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=123456
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=create
+      - "81:81"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
     depends_on:
-      - java_db
-
+      - topeducation1
+      - topeducation2
   java_db:
     container_name: java_db
     image: postgres:15-alpine
@@ -25,3 +22,35 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123456
       POSTGRES_DB: Preuniversitario
+  topeducation1:
+    container_name: java_app1
+    image: cmoragalaz/webapp:latest
+    build: .
+    ports:
+      - 8091:8090
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://java_db:5432/Preuniversitario
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=123456
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create
+    deploy:
+      restart_policy:
+        condition: on-failure
+    depends_on:
+      - java_db
+  topeducation2:
+    container_name: java_app2
+    image: cmoragalaz/webapp:latest
+    build: .
+    ports:
+      - 8092:8090
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://java_db:5432/Preuniversitario
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=123456
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create
+    deploy:
+      restart_policy:
+        condition: on-failure
+    depends_on:
+      - java_db
