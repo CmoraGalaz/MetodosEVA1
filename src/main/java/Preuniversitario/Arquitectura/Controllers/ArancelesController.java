@@ -1,9 +1,9 @@
 package Preuniversitario.Arquitectura.Controllers;
 
 import Preuniversitario.Arquitectura.Models.Aranceles;
-import Preuniversitario.Arquitectura.Models.Estudiantes;
+
 import Preuniversitario.Arquitectura.Services.ArancelesService;
-import Preuniversitario.Arquitectura.Services.EstudiantesService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

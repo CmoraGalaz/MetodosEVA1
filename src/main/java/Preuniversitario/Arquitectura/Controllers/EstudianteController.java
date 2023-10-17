@@ -19,7 +19,7 @@ public class EstudianteController {
     private EstudiantesService estudiantesService;
 
 
-    @GetMapping("/Estudiantes")
+    @GetMapping("/estudiantes")
     public String mostrar (Model model){
         ArrayList<Estudiantes>estudiantes = (ArrayList<Estudiantes>) estudiantesService.findAll();
         model.addAttribute("estudiantes",estudiantes);
@@ -27,7 +27,7 @@ public class EstudianteController {
 
     }
 
-    @GetMapping("/Estudiante/nuevo")
+    @GetMapping("/estudiante/nuevo")
     public String crearEstudianteFormulario(Model model){
         Estudiantes estudiante = new Estudiantes();
         model.addAttribute("estudiante",estudiante);
@@ -35,10 +35,10 @@ public class EstudianteController {
 
     }
 
-    @PostMapping("/Estudiantes")
+    @PostMapping("/estudiante")
     public String guardarEstudiante(@ModelAttribute("estudiante")Estudiantes estudiante){
         estudiantesService.create(estudiante);
-        return "redirect:/Estudiantes";
+        return "redirect:/estudiantes";
 
     }
 

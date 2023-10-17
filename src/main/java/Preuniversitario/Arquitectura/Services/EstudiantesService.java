@@ -19,4 +19,15 @@ public class EstudiantesService implements IEstudiantesService<Estudiantes> {
     public Estudiantes create(Estudiantes estudiante) {
         return iEstudiantesRepository.save(estudiante);
     }
+
+    @Override
+    public Estudiantes update(Estudiantes model) {
+        return iEstudiantesRepository.save(model);
+    }
+
+    @Override
+    public void delete(Integer id) {
+    iEstudiantesRepository.deleteById(id);
+    }
+
 }

@@ -2,22 +2,25 @@ version: '3.9'
 services:
   java_app:
     container_name: java_app
-    image: arquitectura-java-app:1.0.0
+    image: cmoragalaz/webapp:latest
     build: .
     ports:
       - 8088:8088
     environment:
-      - DATABASE_URL=jdbc:postgresql://java_db:5432/Preuniversitario
-      - DATABASE_USERNAME=postgres
-      - DATABASE_PASSWORD=123456
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://java_db:5432/Preuniversitario
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=123456
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create
     depends_on:
       - java_db
 
   java_db:
     container_name: java_db
-    image: postgres:12
+    image: postgres:15-alpine
     ports:
-      - 5432:5432
+      - "5432:5432"
+    volumes:
+      - ./data/db:/var/lib/postgresql
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123456
