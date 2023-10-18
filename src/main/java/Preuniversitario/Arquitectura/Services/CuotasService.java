@@ -37,6 +37,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
         for (int i = 0; i < estudiantes.size(); i++) {
             if (estudiantes.get(i).getRut().equals(documentarArancelMastricula.getRut())) {
                 if ((estudiantes.get(i).getTipoColegio().equals("Municipal")) && (documentarArancelMastricula.getCuotasSeleccionadas() <= 10)) {
+                    arancel = arancel - (arancel * 0.20);
                     if ((documentarArancelMastricula.getEgreso() - 2023) <= 1) {
                         arancel = arancel - (arancel * 0.15);
 
@@ -46,7 +47,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
                             String fechaVencimiento = "06/" + "0" + w + "/2024";
 
                             Cuotas cuota = new Cuotas();
-                            cuota.setNumeroCuota(a);
+                            cuota.setNumeroCuota(w);
                             cuota.setDescripcion(documentarArancelMastricula.getTipoDocumentacion());
                             cuota.setRut(documentarArancelMastricula.getRut());
                             cuota.setEstado("Pendiente");
@@ -68,7 +69,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
                             String fechaVencimiento = "06/" + "0" + w + "/2024";
 
                             Cuotas cuota = new Cuotas();
-                            cuota.setNumeroCuota(a);
+                            cuota.setNumeroCuota(w);
                             cuota.setDescripcion(documentarArancelMastricula.getTipoDocumentacion());
                             cuota.setRut(documentarArancelMastricula.getRut());
                             cuota.setEstado("Pendiente");
@@ -90,7 +91,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
                             String fechaVencimiento = "06/" + "0" + w + "/2024";
 
                             Cuotas cuota = new Cuotas();
-                            cuota.setNumeroCuota(a);
+                            cuota.setNumeroCuota(w);
                             cuota.setDescripcion(documentarArancelMastricula.getTipoDocumentacion());
                             cuota.setRut(documentarArancelMastricula.getRut());
                             cuota.setEstado("Pendiente");
@@ -112,7 +113,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
                                 String fechaVencimiento = "06/" + "0" + w + "/2024";
 
                                 Cuotas cuota = new Cuotas();
-                                cuota.setNumeroCuota(a);
+                                cuota.setNumeroCuota(w);
                                 cuota.setDescripcion(documentarArancelMastricula.getTipoDocumentacion());
                                 cuota.setRut(documentarArancelMastricula.getRut());
                                 cuota.setEstado("Pendiente");
@@ -130,7 +131,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
                     }
 
                 }if ((estudiantes.get(i).getTipoColegio().equals("Subvencionado") )&& (documentarArancelMastricula.getCuotasSeleccionadas() <= 7)) {
-                        arancel = arancel - (arancel * 0.10); // genero el descuento por tipo de colegio
+                    arancel = arancel - (arancel * 0.10); // genero el descuento por tipo de colegio
                         if ((documentarArancelMastricula.getEgreso() - 2023) <= 1) {
                             arancel = arancel - (arancel * 0.15);
 
@@ -140,7 +141,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
                                 String fechaVencimiento = "06/" + "0" + w + "/2024";
 
                                 Cuotas cuota = new Cuotas();
-                                cuota.setNumeroCuota(a);
+                                cuota.setNumeroCuota(w);
                                 cuota.setDescripcion(documentarArancelMastricula.getTipoDocumentacion());
                                 cuota.setRut(documentarArancelMastricula.getRut());
                                 cuota.setEstado("Pendiente");
@@ -162,7 +163,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
                                 String fechaVencimiento = "06/" + "0" + w + "/2024";
 
                                 Cuotas cuota = new Cuotas();
-                                cuota.setNumeroCuota(a);
+                                cuota.setNumeroCuota(w);
                                 cuota.setDescripcion(documentarArancelMastricula.getTipoDocumentacion());
                                 cuota.setRut(documentarArancelMastricula.getRut());
                                 cuota.setEstado("Pendiente");
@@ -184,7 +185,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
                                 String fechaVencimiento = "06/" + "0" + w + "/2024";
 
                                 Cuotas cuota = new Cuotas();
-                                cuota.setNumeroCuota(a);
+                                cuota.setNumeroCuota(w);
                                 cuota.setDescripcion(documentarArancelMastricula.getTipoDocumentacion());
                                 cuota.setRut(documentarArancelMastricula.getRut());
                                 cuota.setEstado("Pendiente");
@@ -208,7 +209,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
                                 String fechaVencimiento = "06/" + "0" + w + "/2024";
 
                                 Cuotas cuota = new Cuotas();
-                                cuota.setNumeroCuota(a);
+                                cuota.setNumeroCuota(w);
                                 cuota.setDescripcion(documentarArancelMastricula.getTipoDocumentacion());
                                 cuota.setRut(documentarArancelMastricula.getRut());
                                 cuota.setEstado("Pendiente");
@@ -227,6 +228,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
 
 
                     }if (estudiantes.get(i).getTipoColegio().equals("Privado") && (documentarArancelMastricula.getCuotasSeleccionadas() <= 4)){
+                    arancel = 1500000;
                     if ((documentarArancelMastricula.getEgreso() - 2023) <= 1) {
                         arancel = arancel - (arancel * 0.15);
 
@@ -236,7 +238,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
                             String fechaVencimiento = "06/" + "0" + w + "/2024";
 
                             Cuotas cuota = new Cuotas();
-                            cuota.setNumeroCuota(a);
+                            cuota.setNumeroCuota(w);
                             cuota.setDescripcion(documentarArancelMastricula.getTipoDocumentacion());
                             cuota.setRut(documentarArancelMastricula.getRut());
                             cuota.setEstado("Pendiente");
@@ -258,7 +260,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
                             String fechaVencimiento = "06/" + "0" + w + "/2024";
 
                             Cuotas cuota = new Cuotas();
-                            cuota.setNumeroCuota(a);
+                            cuota.setNumeroCuota(w);
                             cuota.setDescripcion(documentarArancelMastricula.getTipoDocumentacion());
                             cuota.setRut(documentarArancelMastricula.getRut());
                             cuota.setEstado("Pendiente");
@@ -280,7 +282,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
                             String fechaVencimiento = "06/" + "0" + w + "/2024";
 
                             Cuotas cuota = new Cuotas();
-                            cuota.setNumeroCuota(a);
+                            cuota.setNumeroCuota(w);
                             cuota.setDescripcion(documentarArancelMastricula.getTipoDocumentacion());
                             cuota.setRut(documentarArancelMastricula.getRut());
                             cuota.setEstado("Pendiente");
@@ -304,7 +306,7 @@ public class CuotasService implements ICuotasService<Cuotas> {
                             String fechaVencimiento = "06/" + "0" + w + "/2024";
 
                             Cuotas cuota = new Cuotas();
-                            cuota.setNumeroCuota(a);
+                            cuota.setNumeroCuota(w);
                             cuota.setDescripcion(documentarArancelMastricula.getTipoDocumentacion());
                             cuota.setRut(documentarArancelMastricula.getRut());
                             cuota.setEstado("Pendiente");
