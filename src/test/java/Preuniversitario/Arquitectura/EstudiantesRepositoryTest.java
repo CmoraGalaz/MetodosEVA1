@@ -32,7 +32,7 @@ public class EstudiantesRepositoryTest {
         estudiantes.setFechaNacimiento("19/03/1996");
         estudiantes.setNombreColegio("San Sebastian");
         estudiantes.setEgreso(2017);
-        iEstudiantesRepository.save(estudiantes);
+        //iEstudiantesRepository.save(estudiantes);
 
     }
 
