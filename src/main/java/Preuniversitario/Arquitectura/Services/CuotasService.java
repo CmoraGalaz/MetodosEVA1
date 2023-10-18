@@ -30,6 +30,11 @@ public class CuotasService implements ICuotasService<Cuotas> {
         return iCuotasRepository.save(cuotas);
     }
 
+    @Override
+    public Cuotas update(Cuotas cuotas) {
+        return iCuotasRepository.save(cuotas);
+    }
+
     public DocumentarArancelMastricula crearCuotas(DocumentarArancelMastricula documentarArancelMastricula) {
         int w = 1;
         double arancel = 1500000;

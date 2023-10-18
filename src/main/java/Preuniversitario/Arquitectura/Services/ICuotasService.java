@@ -9,4 +9,5 @@ public interface ICuotasService <T>{
     List<Cuotas> findAll();
 
     Cuotas create(Cuotas cuotas);
+    Cuotas update(Cuotas cuotas);
 }

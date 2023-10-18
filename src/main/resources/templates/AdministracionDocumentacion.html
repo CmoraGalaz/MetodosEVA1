@@ -23,34 +23,36 @@
         <a class="nav-link" th:href= "@{'/documentacion/estudiante'}">Documentacion Arancel</a>
         <a class="nav-link"  th:href="@{'/estudiantes'}">Estudiantes</a>
         <a class="nav-link"  th:href="@{'/cuotas'}">Cuotas</a>
+        <a class="nav-link"  th:href="@{'/examenes'}">Examenes</a>
         <a class="nav-link disabled" aria-disabled="true">Programa De Estudio</a>
       </div>
     </div>
   </div>
 </nav>
+<div class="container-sm">
 <form th:action="@{'/documentacion'}" th:object="${documentar}" method="post">
   <div class="mb-3">
+
     <label for="exampleInputEmail1" class="form-label">Rut</label>
     <input type="number" class="form-control" id="exampleInputEmail6" name = "rut" th:field="*{rut}" aria-describedby="emailHelp">
-
   </div>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Tipo Documentacion</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" name = "tipoDocumentacion" th:field="*{tipoDocumentacion}" aria-describedby="emailHelp">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Tipo Documentacion</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name = "tipoDocumentacion" th:field="*{tipoDocumentacion}" aria-describedby="emailHelp">
 
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Egreso</label>
-    <input type="number" class="form-control" id="exampleInputPassword1"  name = "egreso" th:field="*{egreso}">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword2" class="form-label">Cantidad De Cuotas</label>
-    <input type="number" class="form-control" id="exampleInputPassword2" name = "cuotasSeleccionadas" th:field="*{cuotasSeleccionadas}">
-  </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Egreso</label>
+        <input type="number" class="form-control" id="exampleInputPassword1"  name = "egreso" th:field="*{egreso}">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword2" class="form-label">Cantidad De Cuotas</label>
+        <input type="number" class="form-control" id="exampleInputPassword2" name = "cuotasSeleccionadas" th:field="*{cuotasSeleccionadas}">
+      </div>
 
 
-  <button type="submit" class="btn btn-primary">Guardar</button>
-</form>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+       </form>
 </div>
 
 </body>
